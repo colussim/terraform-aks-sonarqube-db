@@ -470,6 +470,9 @@ Terraform makes it easy to manage Kubernetes clusters and Kubernetes resources e
 ## Resources 
 
 [Terraform Documentation](https://www.terraform.io/docs/index.html)
+
 [Terraform Download](https://www.terraform.io/downloads)
+
+[SonarQube](https://www.terraform.io/downloads](https://www.sonarqube.org/)
 
 
