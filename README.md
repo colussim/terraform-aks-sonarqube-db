@@ -52,10 +52,10 @@ Its initialization for our terraform workflow is in the **providers.tf** file in
 ```
 provider "azurerm" {
   features {}
-  subscription_id = "1d7d141b-b12f-474e-8ef5-231f9a6e8367"
-  client_id       = "c5b5fe61-329b-4f88-a41c-18691ab72a88"
-  client_secret   = "Zzh8Q~4b1XYuUBsObxgEpL3AIfGULuWz9qHLEb~U" 
-  tenant_id       = "75622d57-788f-4dd3-b33c-739f625e6311"
+  subscription_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  client_id       = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  client_secret   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  tenant_id       = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -74,10 +74,10 @@ $ az login
 ```
 provider "azurerm" {
   features {}
-  subscription_id = "1d7d141b-b12f-474e-8ef5-231f9a6e8367"
-  client_id       = "c5b5fe61-329b-4f88-a41c-18691ab72a88"
-  client_secret   = "Zzh8Q~4b1XYuUBsObxgEpL3AIfGULuWz9qHLEb~U" 
-  tenant_id       = "75622d57-788f-4dd3-b33c-739f625e6311"
+  subscription_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  client_id       = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  client_secret   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  tenant_id       = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 
 ```
@@ -456,9 +456,17 @@ Show the SonarQube logs : kubectl -n **namespaces** logs **podname** -c **contai
 kubectl -n sonarqube logs sonarqube01-deployment01-6cf5597856-x89l7 -c sonarqube
 ```
 
+## Conclusion
+With Terraform, booting a AKS cluster can be done with a single command and it only takes some minutes to get a fully functional configuration.
+
+It is also very easy to deploy all SonarQube editions in a kubernetes environment.
+
+Terraform makes it easy to manage Kubernetes clusters and Kubernetes resources effectively. It gives organizations the opportunity to work with infrastructure-as-code, management of platforms, and also the opportunity to create modules for self-service infrastructure.
+
+
 ## Resources 
 
-Terraform Documentation : https://www.terraform.io/docs/index.html
-Terraform Download :https://www.terraform.io/downloads
+[Terraform Documentation](https://www.terraform.io/docs/index.html)
+[Terraform Download](https://www.terraform.io/downloads)
 
 
