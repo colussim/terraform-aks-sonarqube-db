@@ -285,7 +285,7 @@ Apply complete! Resources: 10 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-load_balancer_ip = "20.32.31.53"
+load_balancer_ip = "X.X.X.X"
 load_local_ip = "10.0.162.142"
 sonar_jdbc_password = "sonarqube20@"
 sonar_jdbc_url = "jdbc:sqlserver://10.0.162.142:1433;databaseName=sonarqube9;encrypt=true;trustServerCertificate=true;integratedSecurity=false"
@@ -302,7 +302,7 @@ NAME                                      READY   STATUS    RESTARTS   AGE
 pod/mssql-deployment01-7755b6b876-nbmzs   1/1     Running   0          2m10s
 
 NAME                                 TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)          AGE
-service/mssql-deployment01-service   LoadBalancer   10.0.244.247   20.21.169.76   1433:30363/TCP   2m10s
+service/mssql-deployment01-service   LoadBalancer   10.0.244.247     X.X.X.X    1433:30363/TCP   2m10s
 
 NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/mssql-deployment01   1/1     1            1           2m10s
@@ -411,7 +411,7 @@ Apply complete! Resources: 10 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-load_balancer_ip = "SonarQube URL Access : http://21.207.254.234:9000"
+load_balancer_ip = "SonarQube URL Access : http://X.X.X.X:9000"
 
 ```
 Check your Database deployment is Ok:
@@ -424,7 +424,7 @@ NAME                                            READY   STATUS    RESTARTS   AGE
 pod/sonarqube01-deployment01-6cf5597856-x89l7   1/1     Running   0          2m4s
 
 NAME                                       TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
-service/sonarqube01-deployment01-service   LoadBalancer   10.0.163.25   20.219.254.234  9000:30492/TCP   2m8s
+service/sonarqube01-deployment01-service   LoadBalancer   10.0.163.25     X.X.X.X       9000:30492/TCP   2m8s
 
 NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/sonarqube01-deployment01   1/1     1            1           2m4s
@@ -463,6 +463,9 @@ It is also very easy to deploy all SonarQube editions in a kubernetes environmen
 
 Terraform makes it easy to manage Kubernetes clusters and Kubernetes resources effectively. It gives organizations the opportunity to work with infrastructure-as-code, management of platforms, and also the opportunity to create modules for self-service infrastructure.
 
+## Next steps
+* Deploy a pod application
+* Deploy a Sonar Scanner pod
 
 ## Resources 
 
