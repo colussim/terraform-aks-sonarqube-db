@@ -1,0 +1,10 @@
+spec:
+  template:
+    spec:
+      containers:
+      - name: addon-http-application-routing-nginx-ingress-controller
+        ports:
+         - containerPort: 1433
+           hostPort: 1433 
+           protocol: TCP
+           name: mssql

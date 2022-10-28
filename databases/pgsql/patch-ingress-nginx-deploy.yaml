@@ -1,0 +1,10 @@
+spec:
+  template:
+    spec:
+      containers:
+      - name: addon-http-application-routing-nginx-ingress-controller
+        ports:
+         - containerPort: 5432 
+           hostPort: 5432 
+           protocol: TCP
+           name: postgres
