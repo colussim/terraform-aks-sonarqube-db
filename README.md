@@ -46,7 +46,6 @@ Before you get started, you’ll need to have these things:
 * An Azure service principal for terraform.
 * Microsoft SQL Server command line tools (mssql)
 
-For the Azure service principal for terraform I made the request to our IT it has been created and associated to our subscription and our resource group : rg-services-01.
 
 Its initialization for our terraform workflow is in the **providers.tf** file in the section : 
 ```
