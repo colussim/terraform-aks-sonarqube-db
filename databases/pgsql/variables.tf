@@ -1,9 +1,9 @@
 variable "name" {
-  default     = "pgsql-deployment01"
+  default     = "pgsql-deployment02"
   description = "The name of the PostgreSQL deployment"
 }
 variable "namespace" {
-  default     = "database01"
+  default     = "databaserep"
   description = "The kubernetes namespace to run the PostgreSQL server in."
 }
 
@@ -44,9 +44,23 @@ variable "pgsql_image_tag" {
 
 variable "adminpassword" {
   default     = "Bench123"
-  description = "user sonar Password"
+  description = "PGSQL Admin password"
 }
 
+variable "databasename" {
+  default     = "sonarqube9"
+  description = "Database Name"
+}
+
+variable "sonarusers" {
+  default     = "sonarqube"
+  description = "Sonar user login in Database"
+}
+
+variable "sonarpass" {
+  default     = "sonarqube"
+  description = "Sonar user password in Database"
+}
 
 variable "ingress_ns" {
   default     = "kube-system"
@@ -62,3 +76,4 @@ variable "ingress_deployment" {
   default     = "addon-http-application-routing-nginx-ingress-controller"
   description = "name of ingress mapconfigdeployment"
 }
+

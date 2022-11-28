@@ -32,6 +32,7 @@ resource "kubernetes_config_map" "pgsql-config" {
   }
 }
 
+
 # create a config map for populate volume init
 resource "kubernetes_config_map" "pgsql-init" {
   metadata {
@@ -40,9 +41,10 @@ resource "kubernetes_config_map" "pgsql-init" {
   }
 
   data = {
-  "init.sh"="${file("initdbsq.sh")}"
+  "init.sh" = "${templatefile("initdbsq.tftpl", { database_name = var.databasename, sonar_user = var.sonarusers, sonar_pass = var.sonarpass })}"
   }
-}
+ }
+
 
 # create a PVC for database (Persistent volume Claim)
 
@@ -181,3 +183,18 @@ resource "null_resource" "patch_deployment_ingress" {
     kubernetes_service.pgsql-svc1,null_resource.patch_configmap_ingress
   ]
 }
+
+# Create a local variable for the cluster ip.
+locals {
+  cluster_ip = kubernetes_service.pgsql-svc1.spec.0.cluster_ip
+
+   depends_on = [
+    kubernetes_service.pgsql-svc1,null_resource.patch_configmap_ingress,null_resource.patch_deployment_ingress
+  ]
+}
+
+# Show SonarQube URL access
+output "jdbc_url" {
+  value = "SonarQube JDBC URL Access : User=${var.sonarusers} Password=${var.sonarpass} URL=jdbc:postgresql://${local.cluster_ip}:5432/${var.databasename}"
+}
+

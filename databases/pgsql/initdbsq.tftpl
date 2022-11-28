@@ -1,0 +1,5 @@
+psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "postgres" <<-EOSQL
+CREATE ROLE ${sonar_user} WITH LOGIN PASSWORD '${sonar_pass}';
+CREATE DATABASE ${database_name} WITH ENCODING 'UTF8' OWNER ${sonar_user} TEMPLATE=template0;
+GRANT ALL PRIVILEGES ON DATABASE ${database_name} TO ${sonar_user};"
+EOSQL
