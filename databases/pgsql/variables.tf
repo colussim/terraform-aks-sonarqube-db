@@ -3,7 +3,7 @@ variable "name" {
   description = "The name of the PostgreSQL deployment"
 }
 variable "namespace" {
-  default     = "databaserep"
+  default     = "database01"
   description = "The kubernetes namespace to run the PostgreSQL server in."
 }
 
