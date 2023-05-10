@@ -35,7 +35,7 @@ resource "azurerm_kubernetes_cluster" "SE_aks_cl" {
     orchestrator_version = "${var.k8sversion}"
     vm_size             = "${var.vm_type}"
     type                = "VirtualMachineScaleSets"
-    availability_zones  = ["1", "2"]
+    zones  = ["1", "2"]
     enable_auto_scaling = true
     min_count           = 2
     max_count           = 4
